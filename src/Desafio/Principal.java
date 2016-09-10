@@ -15,21 +15,32 @@ public class Principal {
 
     public static void main(String[] args) {
         //Crear La Estructura.
+        int filas = (int) (Math.random() * 9 + 1);
+        int columnas = (int) (Math.random() * 9 + 1);
+        //int datos = (int) (Math.random() * 9 + 1);
+        System.out.println("Filas: " + filas+ " Columnas : " + columnas);
+        System.out.println("---------------------------------");
+        ArrayList<ArrayList<Integer>> matris = new ArrayList<ArrayList<Integer>>();
 
-        int indices = (int) (Math.random() * 9 + 1);
+        //creo elemento vacio
+        matris.add(new ArrayList<Integer>());
 
-         ArrayList<ArrayList<Integer>> matris = new ArrayList<ArrayList<Integer>>();
-         
-         //creo elemento vacio
-         matris.add(new ArrayList<Integer>());
-         
-         
-         
-         
-    
+        for (int i = 0; i < filas; i++) {
+            //creo elementos vacio
+            matris.add(new ArrayList<Integer>());
+            for (int j = 0; j < columnas; j++) {
+                matris.get(i).add((int) (Math.random() * 9 + 1));
+            }
+        }
 
-        
-        
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                System.out.print("["+matris.get(i).get(j)+"]");
+                
+            }
+            System.out.println(" ");
+        }
+
     }
-    
+
 }
